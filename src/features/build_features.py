@@ -39,7 +39,9 @@ class PrepareHeartDataset(luigi.Task):
         x = raw_df.iloc[:, :-1]
         y = raw_df.iloc[:, -1]
 
-        x_train, x_test, y_train, y_test = train_test_split(x, y)
+        x_train, x_test, y_train, y_test = train_test_split(x,
+                                                            y,
+                                                            test_size=0.15)
 
         x_train.to_csv(self.train_x_path, index=False)
         y_train.to_csv(self.train_y_path, index=False)
