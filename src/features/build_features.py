@@ -8,7 +8,9 @@ from sklearn.model_selection import train_test_split
 
 
 class PrepareHeartDataset(luigi.Task):
-    """Split dataset into train and test sample and features and labels."""
+    """Split dataset into train and test sample and features and labels.
+       Should have been written in a way, that it can be used as a preprocessing
+       task for new data (i.e. data for prediction)."""
 
     raw_data_path = Path('data/raw/heart.csv')
 

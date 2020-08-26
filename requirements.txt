@@ -1,10 +1,74 @@
-# local package
--e .
-
-# external requirements
-click
-Sphinx
-coverage
-awscli
-flake8
-python-dotenv>=0.5.1
+absl-py==0.10.0
+arrow @ file:///D:/bld/arrow_1595595975859/work
+astor==0.8.1
+binaryornot==0.4.4
+brotlipy==0.7.0
+cachetools==4.1.1
+certifi==2020.6.20
+cffi @ file:///D:/bld/cffi_1595805721274/work
+chardet==3.0.4
+click==7.1.2
+cookiecutter==1.7.2
+cryptography @ file:///D:/bld/cryptography_1595348955342/work
+cycler==0.10.0
+gast==0.2.2
+google-auth==1.20.1
+google-auth-oauthlib==0.4.1
+google-pasta==0.2.0
+grpcio==1.31.0
+h5py @ file:///D:/bld/h5py_1595110299148/work
+idna @ file:///home/conda/feedstock_root/build_artifacts/idna_1593328102638/work
+importlib-metadata==1.7.0
+Jinja2==2.11.2
+jinja2-time==0.2.0
+joblib @ file:///home/conda/feedstock_root/build_artifacts/joblib_1593624380152/work
+Keras-Applications==1.0.8
+Keras-Preprocessing==1.1.2
+kiwisolver==1.2.0
+luigi @ file:///C:/ci/luigi_1595274460685/work
+Markdown==3.2.2
+MarkupSafe==1.1.1
+matplotlib @ file:///D:/bld/matplotlib-base_1597428569923/work
+mkl-service==2.3.0
+numpy @ file:///D:/bld/numpy_1595523078866/work
+oauthlib==3.1.0
+olefile==0.46
+opt-einsum==3.3.0
+pandas @ file:///D:/bld/pandas_1595958729109/work
+Pillow @ file:///D:/bld/pillow_1594213048891/work
+poyo==0.5.0
+protobuf==3.13.0
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycparser @ file:///home/conda/feedstock_root/build_artifacts/pycparser_1593275161868/work
+pyOpenSSL==19.1.0
+pyparsing==2.4.7
+PyQt5==5.12.3
+PyQt5-sip==4.19.18
+PyQtWebEngine==5.12.1
+pyreadline==2.1
+PySocks==1.7.1
+python-dateutil==2.8.1
+python-slugify @ file:///home/conda/feedstock_root/build_artifacts/python-slugify_1593573453419/work
+pytz==2020.1
+requests @ file:///home/conda/feedstock_root/build_artifacts/requests_1592425495151/work
+requests-oauthlib==1.3.0
+rsa==4.6
+scikit-learn @ file:///D:/bld/scikit-learn_1596546337481/work
+scipy @ file:///C:/ci/scipy_1592916958183/work
+six @ file:///home/conda/feedstock_root/build_artifacts/six_1590081179328/work
+tensorboard==2.1.1
+tensorflow==2.1.0
+tensorflow-estimator==2.1.0
+termcolor==1.1.0
+text-unidecode==1.3
+threadpoolctl @ file:///tmp/tmp79xdzxkt/threadpoolctl-2.1.0-py3-none-any.whl
+tornado==5.1.1
+Unidecode==1.1.1
+urllib3 @ file:///home/conda/feedstock_root/build_artifacts/urllib3_1595434816409/work
+Werkzeug==1.0.1
+whichcraft==0.6.1
+win-inet-pton==1.1.0
+wincertstore==0.2
+wrapt==1.12.1
+zipp==3.1.0

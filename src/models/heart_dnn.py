@@ -1,7 +1,5 @@
 from pathlib import Path
-
 from luigi.util import inherits
-from sklearn.model_selection import train_test_split
 from tensorflow import keras
 from tensorflow.keras import layers
 import h5py
@@ -38,7 +36,6 @@ class CreateDNNModel(luigi.Task):
         # load dataset meta info (for the shape of x and y)
         meta_data = pd.read_csv(PrepareHeartDataset.meta_data_path)
         x_shape = meta_data['x_shape'][0]
-        y_shape = meta_data['y_shape'][0]
 
         # define model
         model = keras.Sequential([
@@ -176,10 +173,36 @@ class EvaluateDNNModel(luigi.Task):
         return
 
 
-#class DNNModelPredict(luigi.Task):
+@inherits(DNNParameters)
+class DNNModelPredict(luigi.Task):
+    """Simple task to predict class on a given dataset"""
+
+    data_for_prediction_path = luigi.Parameter(Path('data/processed/heart_predict.csv'))
+    results_path = luigi.Parameter(Path('reports/results/heart_prediction_results.csv'))
+
+    def requires(self):
+        return TrainDNNModel()
+
+    def output(self):
+        return luigi.LocalTarget(self.results_path)
+
+    def run(self):
+        data = pd.read_csv(self.data_for_prediction_path)
+
+        model = keras.models.load_model(self.trained_model_path)
+
+        predictions = np.argmax(model.predict(data), axis=1)
+
+        print(predictions)
+
+        predictions = pd.DataFrame(data=np.argmax(model.predict(data), axis=1),
+                                   columns=['target'])
+
+        predictions.to_csv(self.results_path,
+                           index=False)
 
 
 if __name__ == '__main__':
-    luigi.build([EvaluateDNNModel()],
+    luigi.build([DNNModelPredict()],
                 local_scheduler=True,
                 detailed_summary=True)
