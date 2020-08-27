@@ -1,7 +1,7 @@
-ml_templates
+dnn_clf
 ==============================
 
-A collection of templates for the most common machine learning problems.
+A simple template for a deep neural network classifier.
 
 Project Organization
 ------------
